@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "description": "General settings for ADP paystub to Monarch Money CSV exporter",
+  "output": {
+    "csv_format": "monarch_money",
+    "include_header": false,
+    "date_format": "YYYY-MM-DD",
+    "currency_format": "decimal",
+    "negative_format": "dash"
+  },
+  "processing": {
+    "pdf_parser": "pdfplumber",
+    "validation_enabled": true,
+    "duplicate_detection": true,
+    "batch_processing": true
+  },
+  "file_handling": {
+    "input_directory": "./data",
+    "output_directory": "./output",
+    "backup_pdfs": true,
+    "output_naming": "{pay_date}_{advice_number}_monarch.csv"
+  },
+  "validation": {
+    "verify_gross_net_balance": true,
+    "require_advice_number": true,
+    "minimum_gross_pay": 0.01
+  },
+  "logging": {
+    "level": "INFO",
+    "log_file": "./logs/paystub_processor.log",
+    "include_timestamps": true
+  },
+  "monarch_money": {
+    "expected_columns": 9,
+    "column_order": [
+      "date",
+      "description",
+      "original_description",
+      "amount",
+      "transaction_type",
+      "category",
+      "account_name",
+      "labels",
+      "notes"
+    ],
+    "amount_precision": 2,
+    "date_format": "YYYY-MM-DD",
+    "transaction_types": {
+      "income": "credit",
+      "expense": "debit"
+    }
+  }
+}

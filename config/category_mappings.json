@@ -1,0 +1,195 @@
+{
+  "version": "1.0",
+  "description": "Category mappings for ADP paystub components to Monarch Money categories",
+  "earnings": {
+    "regular": {
+      "category": "Income:Salary",
+      "description": "Regular salary income"
+    },
+    "rsu_vest": {
+      "category": "Income:Stock Compensation",
+      "description": "RSU vesting income"
+    },
+    "flex_pto": {
+      "category": "Income:Salary",
+      "description": "Flexible/PTO time earnings"
+    },
+    "holiday_pay": {
+      "category": "Income:Salary",
+      "description": "Holiday pay compensation"
+    },
+    "std_pto_pay": {
+      "category": "Income:Salary",
+      "description": "Standard PTO payout"
+    },
+    "imputed_income": {
+      "category": "Income:Other",
+      "description": "Imputed income from benefits"
+    }
+  },
+  "deductions": {
+    "statutory": {
+      "federal_income_tax": {
+        "category": "Taxes:Federal Income Tax",
+        "description": "Federal income tax withholding"
+      },
+      "medicare_tax": {
+        "category": "Taxes:Medicare Tax",
+        "description": "Medicare tax withholding"
+      },
+      "medicare_surtax": {
+        "category": "Taxes:Medicare Surtax",
+        "description": "Medicare surtax withholding"
+      },
+      "social_security_tax": {
+        "category": "Taxes:Social Security Tax",
+        "description": "Social Security tax withholding"
+      },
+      "wa_paid_family_leave": {
+        "category": "Taxes:State Insurance",
+        "description": "Washington Paid Family Leave insurance"
+      },
+      "wa_paid_medical_leave": {
+        "category": "Taxes:State Insurance",
+        "description": "Washington Paid Medical Leave insurance"
+      }
+    },
+    "retirement": {
+      "401k_traditional": {
+        "category": "Transfer:401k Traditional",
+        "description": "401k traditional contribution"
+      },
+      "401k_after_tax": {
+        "category": "Transfer:401k After-Tax",
+        "description": "401k after-tax contribution"
+      }
+    },
+    "healthcare": {
+      "hsa": {
+        "category": "Transfer:HSA",
+        "description": "Health Savings Account contribution"
+      },
+      "pre_tax_medical": {
+        "category": "Healthcare:Medical Insurance",
+        "description": "Pre-tax medical insurance premium"
+      },
+      "pre_tax_dental": {
+        "category": "Healthcare:Dental Insurance",
+        "description": "Pre-tax dental insurance premium"
+      },
+      "pre_tax_vision": {
+        "category": "Healthcare:Vision Insurance",
+        "description": "Pre-tax vision insurance premium"
+      }
+    },
+    "life_insurance": {
+      "groupterm_life": {
+        "category": "Insurance:Life Insurance",
+        "description": "Group term life insurance premium"
+      },
+      "supp_life_ins": {
+        "category": "Insurance:Life Insurance",
+        "description": "Supplemental life insurance premium"
+      },
+      "supp_add": {
+        "category": "Insurance:AD&D Insurance",
+        "description": "Supplemental AD&D insurance premium"
+      },
+      "critic_illness": {
+        "category": "Insurance:Critical Illness",
+        "description": "Critical illness insurance premium"
+      },
+      "slifcd": {
+        "category": "Insurance:Life Insurance",
+        "description": "Supplemental life insurance (child/dependent)"
+      },
+      "slifsp": {
+        "category": "Insurance:Life Insurance",
+        "description": "Supplemental life insurance (spouse)"
+      }
+    },
+    "other": {
+      "oc_park_charge": {
+        "category": "Work Expenses:Parking",
+        "description": "Office campus parking charge"
+      },
+      "imputed": {
+        "category": "Other:Imputed Benefits",
+        "description": "Imputed benefit deduction"
+      },
+      "stock": {
+        "category": "Transfer:Stock Plan",
+        "description": "Stock plan related deduction"
+      }
+    }
+  },
+  "rsu_special_handling": {
+    "description": "Special categorization for RSU vesting events",
+    "rsu_income": {
+      "category": "Income:Stock Compensation",
+      "description": "RSU vest income"
+    },
+    "rsu_tax_withholding": {
+      "federal_income_tax": {
+        "category": "Taxes:Federal Income Tax (Stock)",
+        "description": "Federal tax withholding on stock compensation"
+      },
+      "medicare_tax": {
+        "category": "Taxes:Medicare Tax (Stock)",
+        "description": "Medicare tax withholding on stock compensation"
+      },
+      "social_security_tax": {
+        "category": "Taxes:Social Security Tax (Stock)",
+        "description": "Social Security tax withholding on stock compensation"
+      },
+      "stock_deduction": {
+        "category": "Taxes:Stock Withholding",
+        "description": "Stock-related tax withholding or sale"
+      }
+    }
+  },
+  "account_mappings": {
+    "checking_acct_1": "Primary Checking",
+    "checking_acct_2": "Secondary Checking",
+    "savings_acct_1": "Primary Savings",
+    "net_check": "Physical Check"
+  },
+  "transaction_type_mappings": {
+    "earnings": "credit",
+    "deductions": "debit",
+    "net_deposits": "credit"
+  },
+  "field_mappings": {
+    "earnings_patterns": {
+      "regular": ["Regular"],
+      "rsu_vest": ["Rsu Vest", "RSU Vest"],
+      "flex_pto": ["Flex/Pto", "Flex/PTO"],
+      "holiday_pay": ["Holiday Pay"],
+      "std_pto_pay": ["Stnd Pto Pay", "Std Pto Pay"],
+      "imputed_income": ["Imputed Income"]
+    },
+    "deduction_patterns": {
+      "federal_income_tax": ["Federal Income Tax"],
+      "medicare_tax": ["Medicare Tax"],
+      "medicare_surtax": ["Medicare Surtax"],
+      "social_security_tax": ["Social Security Tax"],
+      "wa_paid_family_leave": ["WA Paid Family Leave Ins"],
+      "wa_paid_medical_leave": ["WA Paid Medical Leave Ins"],
+      "401k_traditional": ["401K-Trad"],
+      "401k_after_tax": ["401K After Tax"],
+      "hsa": ["Hsa"],
+      "pre_tax_medical": ["Pre-Tax Medical"],
+      "pre_tax_dental": ["Pre-Tax Dental"],
+      "pre_tax_vision": ["Pre-Tax Vision"],
+      "groupterm_life": ["Groupterm Life"],
+      "supp_life_ins": ["Supp Life Ins"],
+      "supp_add": ["Supp Ad/D"],
+      "critic_illness": ["Critic Illness"],
+      "slifcd": ["Slifcd"],
+      "slifsp": ["Slifsp"],
+      "oc_park_charge": ["Oc Park Charge"],
+      "imputed": ["Imputed"],
+      "stock": ["Stock"]
+    }
+  }
+}
